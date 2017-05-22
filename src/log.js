@@ -1,0 +1,1 @@
+<Route path="/leaf_manager_web/static/html/agent/agentlist/detail" component={agentdetail} />
