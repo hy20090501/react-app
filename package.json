@@ -1,0 +1,53 @@
+{
+  "name": "my-app2",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "antd": "^3.26.2",
+    "axios": "^0.19.0",
+    "babel-plugin-import": "^1.13.0",
+    "connected-react-router": "^6.6.1",
+    "customize-cra": "^0.9.1",
+    "history": "^4.10.1",
+    "http-proxy-middleware": "^0.20.0",
+    "lodash": "^4.17.15",
+    "mockjs": "^1.1.0",
+    "react": "^16.12.0",
+    "react-app-rewired": "^2.1.5",
+    "react-dom": "^16.12.0",
+    "react-redux": "^7.1.3",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.3.0",
+    "redux": "^4.0.4",
+    "redux-actions": "^2.6.5",
+    "redux-thunk": "^2.3.0",
+    "whatwg-fetch": "^3.0.0"
+  },
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "sh -ac '. .env.${REACT_APP_ENV}; react-app-rewired build'",
+    "build:test": "REACT_APP_ENV=test yarn build",
+    "build:pro": "REACT_APP_ENV=pro yarn build",
+    "test": "react-app-rewired test",
+    "eject": "react-app-rewired eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {}
+}
