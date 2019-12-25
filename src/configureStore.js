@@ -3,10 +3,10 @@ import { applyMiddleware, compose, createStore } from 'redux'
 import thunk from 'redux-thunk'
 import { routerMiddleware } from 'connected-react-router'
 import createRootReducer from './reducers'// 引入reducers集合
-// import DevTools from './DevTools' // 引入DevTools调试组件
 // 利用redux-logger打印日志
 import { createLogger } from 'redux-logger'
-//安装redux-devtools-extension的可视化工具。
+
+//安装redux-devtools-extension的可视化工具
 import { composeWithDevTools } from 'redux-devtools-extension'
 export const history = createBrowserHistory()
 const composeEnhancers = process.env.NODE_ENV != 'production' ? composeWithDevTools({
@@ -26,8 +26,6 @@ export default function configureStore(preloadedState) {
         preloadedState,
         composeEnhancers(
             applyMiddleware(
-                // routerMiddleware(history), // for dispatching history actions
-                // thunk,
                 ...middlewares
                 // ... other middlewares ...
             )
