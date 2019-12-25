@@ -1,16 +1,13 @@
 import React from 'react'
 import { Form, Icon, Input, Button } from 'antd';
-import '../assets/css/login.css'
-import { login } from '../api'
-class Login extends React.Component {
+import '../../assets/css/login.css'
+class LoginForm extends React.Component {
     handleSubmit = e => {
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
             if (!err) {
                 console.log('Received values of form: ', values);
-                login(values).then((data)=>{
-                    debugger
-                })
+                this.props.handleSubmit(values);
             }
         });
     };
@@ -56,4 +53,4 @@ class Login extends React.Component {
     }
 }
 
-export default Form.create({ name: 'normal_login' })(Login);
+export default Form.create({ name: 'normal_login' })(LoginForm);

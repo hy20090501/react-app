@@ -23,7 +23,7 @@ class Container extends React.Component {
         });
     }
     componentWillMount(){
-        this.props.getMenuList();
+        // this.props.getMenuList();
     }
     render(){
         const { routes, permission, menuList } = this.props;

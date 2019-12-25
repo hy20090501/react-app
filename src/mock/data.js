@@ -1,5 +1,13 @@
 
 export default {
+    login: () => {
+        return {
+            "code": "200",
+            "result": {
+                token: '9284924829438294'
+            }
+        }
+    },
     getList: () => {
         return {
             "code": "200",

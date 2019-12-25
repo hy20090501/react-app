@@ -1,5 +1,15 @@
 import axios from '../utils/axios';
 // import qs from 'qs';
+
+
+export async function login(data) {
+    return await axios({
+        url: '/api/login',
+        method: 'post',
+        data
+    })
+}
+
 export function getList(params) {
     return axios({
         url: '/api/getList',

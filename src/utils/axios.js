@@ -14,6 +14,15 @@ service.interceptors.request.use(config => {
         //         }
         //     })
         // }
+        if (process.env.NODE_ENV !== 'production') {
+            let { url, method, data} = config;
+            let apiInfo = {
+                url,
+                method,
+                data
+            };
+            console.log('[api info]:' + JSON.stringify(apiInfo));
+        }
         merge(config, {
             params: {
                 iosTimeStamp: new Date().getTime()

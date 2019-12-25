@@ -10,7 +10,7 @@ import { withRouter } from 'react-router-dom'
 import { isLogin } from './utils/auth'
 import './App.css';
 
-import Login from './components/login'
+import Login from './components/login/index'
 import Container from './components/container'
 import { routes } from './routes'
 
