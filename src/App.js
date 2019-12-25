@@ -30,7 +30,7 @@ class App extends React.Component {
                     <Route exact path="/login">
                         <Login />
                     </Route>
-                    <WrappedRoute path="/app" session={session}>
+                    <WrappedRoute path="/" session={session}>
                         <Container routes={routes} />
                     </WrappedRoute>
                     <Route path="*" render={

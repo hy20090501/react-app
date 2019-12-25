@@ -22,9 +22,9 @@ class Container extends React.Component {
             collapsed: !this.state.collapsed,
         });
     }
-    componentWillMount(){
-        // this.props.getMenuList();
-    }
+    // componentWillMount(){
+    //     this.props.getMenuList();
+    // }
     render(){
         const { routes, permission, menuList } = this.props;
         return (

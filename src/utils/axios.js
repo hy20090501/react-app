@@ -10,7 +10,7 @@ service.interceptors.request.use(config => {
         // if (process.env.NODE_ENV !== 'production') {
         //     merge(config, {
         //         params: {
-        //             code: 275302
+        //             code: **
         //         }
         //     })
         // }
@@ -21,7 +21,7 @@ service.interceptors.request.use(config => {
                 method,
                 data
             };
-            console.log('[api info]:' + JSON.stringify(apiInfo));
+            console.log('[API]>>>>' + JSON.stringify(apiInfo));
         }
         merge(config, {
             params: {

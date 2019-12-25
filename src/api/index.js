@@ -2,8 +2,8 @@ import axios from '../utils/axios';
 // import qs from 'qs';
 
 
-export async function login(data) {
-    return await axios({
+export function login(data) {
+    return axios({
         url: '/api/login',
         method: 'post',
         data
@@ -35,8 +35,8 @@ export async function getPermission(params) {
     });
 }
 
-export async function getMenuList(params) {
-    return await axios({
+export function getMenuList(params) {
+    return axios({
         url: '/api/menu',
         method: 'get',
         params

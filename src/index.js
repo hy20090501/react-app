@@ -8,7 +8,7 @@ import configureStore, { history } from './configureStore'
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-if(process.env.NODE_ENV == 'development') {
+if(process.env.NODE_ENV === 'development') {
     require('./mock')
 }
 const store = configureStore(/* provide initial state if any */);

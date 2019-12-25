@@ -9,7 +9,7 @@ class Login extends React.Component {
     handleSubmit = e => {
         login(e).then(data=>{
             this.props.setSession(data);
-            this.props.history.push('/app');
+            this.props.history.push('/app/home');
         });
     }
 
