@@ -8,7 +8,7 @@ import {
 import { connect } from 'react-redux' // 引入connect
 import { withRouter } from 'react-router-dom'
 import { isLogin } from './utils/auth'
-import './App.css';
+import './App.less';
 
 import Login from './components/login/index'
 import Container from './components/container'

@@ -5,7 +5,7 @@ import zh_CN from 'antd/es/locale/zh_CN';
 import { Provider } from 'react-redux'
 import { ConnectedRouter } from 'connected-react-router'
 import configureStore, { history } from './configureStore'
-import './index.css';
+import './index.less';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 if(process.env.NODE_ENV === 'development') {

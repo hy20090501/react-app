@@ -1,6 +1,6 @@
 import React from 'react'
 import { Form, Icon, Input, Button } from 'antd';
-import '../../assets/css/login.css'
+import '../../assets/styles/login.less'
 class LoginForm extends React.Component {
     handleSubmit = e => {
         e.preventDefault();

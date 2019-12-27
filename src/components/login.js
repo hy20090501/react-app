@@ -1,6 +1,6 @@
 import React from 'react'
 import { Form, Icon, Input, Button } from 'antd';
-import '../assets/css/login.css'
+import '../assets/styles/less/login.css'
 import { login } from '../api'
 class Login extends React.Component {
     handleSubmit = e => {
