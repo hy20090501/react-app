@@ -11,6 +11,11 @@ import Topics, { Topic } from './components/topics'
 
 export const routes = [
     {
+        path: "/app",
+        exact: true,
+        component: Home
+    },
+    {
         path: "/app/home",
         exact: true,
         component: Home

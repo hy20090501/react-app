@@ -2,7 +2,7 @@ import actionTypes from "../actions/actionTypes";
 
 const initialState = {
     session: null, //session: token
-    //权限
+    //菜单权限
     permission: {
         home: true,
         about: true,
@@ -11,15 +11,18 @@ const initialState = {
     menuList: [
         {
             url: 'home',
-            name: 'Home'
+            name: 'Home',
+            icon: 'home'
         },
         {
             url: 'about',
-            name: 'About'
+            name: 'About',
+            icon: 'user'
         },
         {
             url: 'topics',
-            name: 'Topics'
+            name: 'Topics',
+            icon: 'star'
         }
     ]
 }

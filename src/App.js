@@ -23,15 +23,15 @@ class App extends React.Component {
         };
     }
     render() {
-        const { session } = this.props;
+        const { session, location } = this.props;
         return (
             <Router>
                 <Switch>
                     <Route exact path="/login">
                         <Login />
                     </Route>
-                    <WrappedRoute path="/" session={session}>
-                        <Container routes={routes} />
+                    <WrappedRoute path="/app" session={session}>
+                        <Container routes={routes} location={location} />
                     </WrappedRoute>
                     <Route path="*" render={
                         () => {

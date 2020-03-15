@@ -12,21 +12,41 @@ const { Header, Content, Footer, Sider } = Layout;
 class Container extends React.Component {
     constructor(props){
         super(props);
+        let { location } = this.props;
+        //当前的pathname
+        let pathname = location.pathname;
         this.state = {
             collapsed: false,
+            selectedKeys: '0'
         };
-        this.toggle = this.toggle.bind(this);
+        if(pathname == '/app') {
+            this.state.selectedKeys = '0'
+        }
+        if(pathname == '/app/topics') {
+            this.state.selectedKeys = '2'
+        }
+        if(pathname == '/app/about') {
+            this.state.selectedKeys = '1'
+        }
     }
-    toggle() {
+    toggle = ()=> {
         this.setState({
             collapsed: !this.state.collapsed,
         });
     }
-    // componentWillMount(){
-    //     this.props.getMenuList();
-    // }
+    menuClick = e => {
+        this.setState({
+            selectedKeys: e.key,
+        });
+    };
+    componentWillMount(){
+        // this.props.getMenuList();
+    }
     render(){
-        const { routes, permission, menuList } = this.props;
+        let { routes, permission, menuList } = this.props;
+        //过滤有权限的菜单
+        menuList = menuList.filter(item=>permission[item.name.toLowerCase()]);
+        debugger
         return (
             <Layout className="layout">
                 <Header>
@@ -44,12 +64,14 @@ class Container extends React.Component {
                 <Content>
                     <Layout>
                         <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
-                            <Menu theme="dark" mode="inline" defaultSelectedKeys={['0']}>
+                            <Menu theme="dark" mode="inline" defaultSelectedKeys={['0']} selectedKeys={[this.state.selectedKeys]} onClick={this.menuClick}>
                                 {
                                     menuList.map((e, index) =>
                                         <Menu.Item key={index}>
-                                            <Icon type="user" />
-                                            <span><Link to={'/app/'+e.url} >{e.name}</Link></span>
+                                            <Link to={'/app/'+e.url} >
+                                            <Icon type={e.icon} />
+                                            <span>{e.name}</span>
+                                            </Link>
                                         </Menu.Item>
                                     )
                                 }
@@ -72,9 +94,11 @@ class Container extends React.Component {
                                 }}
                             >
                                 <Switch>
-                                    {routes.map((route, i) => (
-                                        <RouteWithSubRoutes key={i} {...route} permission={permission}/>
-                                    ))}
+                                    {
+                                        routes.map((route, i) => (
+                                            <RouteWithSubRoutes key={i} {...route} permission={permission}/>
+                                        ))
+                                    }
                                 </Switch>
                             </Content>
                             <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
