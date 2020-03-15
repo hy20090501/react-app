@@ -22,10 +22,10 @@ class Container extends React.Component {
         if(pathname == '/app') {
             this.state.selectedKeys = '0'
         }
-        if(pathname == '/app/topics') {
+        if(pathname.includes('/app/topics')) {
             this.state.selectedKeys = '2'
         }
-        if(pathname == '/app/about') {
+        if(pathname.includes('/app/about')) {
             this.state.selectedKeys = '1'
         }
     }
