@@ -2,16 +2,15 @@ import React from 'react'
 import {
     BrowserRouter as Router,
     Switch,
-    Route,
-    Redirect
+    Route
 } from "react-router-dom";
 import { connect } from 'react-redux' // 引入connect
 import { withRouter } from 'react-router-dom'
-import { isLogin } from './utils/auth'
 import './App.less';
 
 import Login from './components/login/index'
 import Container from './components/container'
+import AuthorizedRoute from './components/authorized'
 import { routes } from './routes'
 
 
@@ -30,9 +29,9 @@ class App extends React.Component {
                     <Route exact path="/login">
                         <Login />
                     </Route>
-                    <WrappedRoute path="/" session={session}>
+                    <AuthorizedRoute path="/" session={session}>
                         <Container routes={routes} location={location} />
-                    </WrappedRoute>
+                    </AuthorizedRoute>
                     <Route path="*" render={
                         () => {
                             return (
@@ -62,25 +61,6 @@ export default withRouter(connect(
     null
 )(App))
 
-function WrappedRoute({ children, ...rest }) {
-    let { session } = rest;
-    return (
-        <Route
-            {...rest}
-            render={({ location }) =>
-                isLogin(session) ? (
-                    children
-                ) : (
-                    <Redirect
-                        to={{
-                            pathname: "/login",
-                            state: { from: location }
-                        }}
-                    />
-                )
-            }
-        />
-    );
-}
+
 
 
